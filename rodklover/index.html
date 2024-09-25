@@ -6,19 +6,83 @@
     <title>Document</title>
 
 
+    <style>
+        body {
+            background-color: rgb(241, 194, 201);
+            margin: 0 20px 0 20px;
+        }
+
+        .text{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #pageTitle{
+            font-size: 45px;
+            font-weight: bold;
+            color: rgb(169, 33, 78);
+        }
+
+        #navMenu{
+            height: 50px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style-type: none;
+            grid-auto-flow: dense;
+            padding: 0; /*lister har automatisk padding*/
+            justify-items: center;
+            align-items: center;
+            background-color: rgba(169, 33, 78, 0.3) ;
+            border-radius: 15px;
+        }
+
+        #redCloverMacro{
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .wikiInfo{
+            display: flex;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 480px){
+            #navMenu{
+                display: block;
+                width: 100%;
+                padding: 10px;
+                border-top: 1px solid rgb(130, 18, 55);
+                margin: 0 auto;
+            }
+        } 
+
+    </style>
+
 </head>
-<body style="padding: 20px;">
-    <header style="padding: px;">
-        <img style="margin-top: 10px;" width="60" src="https://1drv.ms/i/s!AnTPt6C-IlNM6iQjs073lZGiKqPu?embed=1&width=500&height=500" alt="Rødkløver logo" style="float: left; margin-right: 10px;">
-        <h1>Rødkløver Entusiastenes Forening</h1>
+<body>
+    <header>
+        <img class="pictures" id="logo" src="https://1drv.ms/i/s!AnTPt6C-IlNM6iQjs073lZGiKqPu?embed=1&width=500&height=500" alt="Rødkløver logo">
+        <div class="text" id="pageTitle">Rødkløver Entusiastenes Forening</div>
     </header>
-    <button id="innmelding" style="margin-bottom: 20px;">Innmelding</button>
-    <section>
-        <img src="https://1drv.ms/i/s!AnTPt6C-IlNM6iViivt1fy30qCAY?embed=1&width=1200&height=1600" alt="Red Clover Image" width="200">
-        <h2>Foto: Mathilde Movik (en søt raring)</h2>
-        <p>
+    <ul id="navMenu">
+        <li>Innmelding</li>
+        <li>placeholder</li>
+        <li>placeholder</li>
+        <li>placeholder</li>
+    </ul>
+    <section class="wikiInfo">
+        <div id="wikiPicture">
+            <img class="pictures" id="redCloverMacro" src="https://1drv.ms/i/s!AnTPt6C-IlNM6iViivt1fy30qCAY?embed=1&width=1200&height=1600" alt="Red Clover Image">
+            <div class="pictureCaption">Foto: Mathilde Movik (en søt raring)</div>
+        </div>
+        <div class="text">
             Rødkløver (Trifolium pratense) er en flerårig plante i erteblomstfamilien. Den er kjent for sine rosa til lilla blomster og brukes ofte som fôrplante for husdyr. Rødkløver har også medisinske egenskaper og brukes i tradisjonell medisin for å behandle ulike plager.
-        </p>
+        </div>
     </section>
 
 </body> 
@@ -29,7 +93,6 @@
 
     function innmeldingFunk(){
         innmelding.innerHTML = "Lek litt mer deilig!!!"
-        console.log("YO")
     }
 
     innmelding.addEventListener("click", innmeldingFunk)
