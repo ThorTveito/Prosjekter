@@ -14,18 +14,36 @@
 
         .text{
             font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        #logo{
+            max-width: 500px;
+            width: 100%;
+            height: 100%;
         }
 
         header{
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-items: center;
         }
 
         #pageTitle{
-            font-size: 45px;
+            width: 100%;
+            font-size: 10vw;
             font-weight: bold;
             color: rgb(169, 33, 78);
+            padding: 0;
+        }
+
+        #coreValues{
+            font-size: 7vw;
+            font-weight: bold;
+            color: rgb(169, 33, 78);
+            text-decoration-line: underline;
         }
 
         #navMenu{
@@ -44,6 +62,18 @@
         #redCloverMacro{
             max-width: 400px;
             width: 100%;
+            padding-top: 10px;
+        }
+
+        #tineKjernesak{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #kjernesaker{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
         }
 
         .wikiInfo{
@@ -53,11 +83,23 @@
 
         @media screen and (max-width: 480px){
             #navMenu{
-                display: block;
-                width: 100%;
+                height: 100px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
                 padding: 10px;
-                border-top: 1px solid rgb(130, 18, 55);
-                margin: 0 auto;
+                border: 1px solid rgb(130, 18, 55);
+                align-items: center;
+                justify-items: center;
+            }
+
+            #navMenu > li{
+                margin: 0 ;
+                border: 1 px solid rgb(130, 18, 55);
+            }
+
+            .text{
+                font-size: 15px;
             }
         } 
 
@@ -67,9 +109,9 @@
 <body>
     <header>
         <img class="pictures" id="logo" src="https://1drv.ms/i/s!AnTPt6C-IlNM6iQjs073lZGiKqPu?embed=1&width=500&height=500" alt="Rødkløver logo">
-        <div class="text" id="pageTitle">Rødkløver Entusiastenes Forening</div>
+        <div class="title text" id="pageTitle">Rødkløver Entusiastenes Forening</div>
     </header>
-    <ul id="navMenu">
+    <ul id="navMenu" class="text">
         <li>Innmelding</li>
         <li>placeholder</li>
         <li>placeholder</li>
@@ -78,12 +120,21 @@
     <section class="wikiInfo">
         <div id="wikiPicture">
             <img class="pictures" id="redCloverMacro" src="https://1drv.ms/i/s!AnTPt6C-IlNM6iViivt1fy30qCAY?embed=1&width=1200&height=1600" alt="Red Clover Image">
-            <div class="pictureCaption">Foto: Mathilde Movik (en søt raring)</div>
+            <div class="pictureCaption text">Foto: Mathilde Movik</div>
         </div>
         <div class="text">
             Rødkløver (Trifolium pratense) er en flerårig plante i erteblomstfamilien. Den er kjent for sine rosa til lilla blomster og brukes ofte som fôrplante for husdyr. Rødkløver har også medisinske egenskaper og brukes i tradisjonell medisin for å behandle ulike plager.
         </div>
     </section>
+    <div id="kjernesaker">
+        <div class="secondaryTitle text" id="coreValues">Kjernesaker</div>
+        <div id="tineKjernesak">
+            <img class="pictures" id="cottageCheese" src="https://www.tine.no/_/packshot/160x160/5448.png">
+            <div class="text">Rødkløver Entusiastenes Forening står sterkt i samarbeid med Foreningen mot Cottage Cheese.
+                Vi har som kjernesak at bruken av rødkløver på emballasjen på Tine sin mager cottage cheese er en skam for rødkløverens magi! 
+            </div>
+        </div>
+    </div>
 
 </body> 
 
